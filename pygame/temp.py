@@ -26,16 +26,23 @@ while run:
                     z = y-30
                     while z > vel:
                         z -= 2
-                        pygame.time.delay(50)
+                        pygame.time.delay(10)
                         win.fill((0,0,0))
                         pygame.draw.rect(win, (255,0,0), (x,z,width,height))
                         pygame.draw.rect(win, (255,255,0), (x,y,width,height))
                         pygame.draw.rect(win, (255,255,0), (ox,oy,width,height))
                         pygame.display.update()
                         ox += vel
+                        if (ox>=480):
+                            ox = 10
+                            win.fill((0,0,0))
+                            pygame.draw.rect(win, (255,0,0), (x,z,width,height))
+                            pygame.draw.rect(win, (255,255,0), (x,y,width,height))
+                            pygame.draw.rect(win, (255,255,0), (ox,oy,width,height))
+                            pygame.display.update()
 
         ox += vel
-        pygame.time.delay(50)
+        pygame.time.delay(15)
         win.fill((0,0,0))
         pygame.draw.rect(win, (255,255,0), (ox,oy,width,height))
         pygame.draw.rect(win, (255,255,0), (x,y,width,height))
